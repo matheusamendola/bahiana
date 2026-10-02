@@ -16,6 +16,7 @@ def fetch_rm(rm_code: str, timeout: int = 60):
         url,
         auth=HTTPBasicAuth(config.RM_USER, config.RM_PASS),
         timeout=timeout,
+        headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"},
     )
     resp.raise_for_status()
     data = resp.json()
